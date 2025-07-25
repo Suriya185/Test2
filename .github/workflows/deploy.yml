@@ -29,5 +29,6 @@ jobs:
         path: istio-1.24.6/
 
     - name: Install Istio
-      run: |  
-         istioctl install
+      run: |
+        export PATH=$PWD/istio-1.24.6/bin:$PATH
+        istioctl install --set profile=demo -y
