@@ -18,6 +18,12 @@ jobs:
       with:
         fetch-depth: 0 
 
-    - name: Set up istio
+    - name: download istio
       run: |
-        istioctl operator init
+        curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.24.6 TARGET_ARCH=x86_64 sh -
+        
+    - name: Upload Istio as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: istio-files
+        path: istio-1.24.6/
