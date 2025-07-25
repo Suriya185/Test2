@@ -27,3 +27,7 @@ jobs:
       with:
         name: istio-files
         path: istio-1.24.6/
+
+    - name: Install Istio
+      run: |  
+         istioctl install
