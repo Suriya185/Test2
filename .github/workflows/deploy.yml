@@ -23,7 +23,7 @@ jobs:
         curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.24.6 TARGET_ARCH=x86_64 sh -
         
     - name: Upload Istio as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: istio-files
         path: istio-1.24.6/
